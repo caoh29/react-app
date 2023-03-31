@@ -9,7 +9,7 @@ function App() {
   }
 
   const expenses: Expense[] = [
-    { id: 'e1', title: 'Car Insurance', amount: 294.67, date: new Date(2023, 3, 1)}
+    { id: 'e1', title: 'Car Insurance', amount: 294.67, date: new Date(2023, 2, 31)}
   ];
 
   return (
