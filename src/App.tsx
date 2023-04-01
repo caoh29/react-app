@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense";
 
 function App() {
   interface Expense {
@@ -9,16 +10,14 @@ function App() {
   }
 
   const expenses: Expense[] = [
-    { id: 'e1', title: 'Car Insurance', amount: 294.67, date: new Date(2023, 2, 31)}
+    { id: 'e1', title: 'Car Insurance', amount: 294.67, date: new Date()},
+    { id: 'e2', title: 'Bike Insurance', amount: 124.15, date: new Date()}
   ];
 
   return (
     <div>
-      <ExpenseItem
-        title = {expenses[0].title}
-        amount = {expenses[0].amount}
-        date = {expenses[0].date}
-      ></ExpenseItem>
+      <NewExpense/>
+      <Expenses items={expenses}/>
     </div>
   );
 }

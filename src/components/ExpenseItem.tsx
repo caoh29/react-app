@@ -1,19 +1,31 @@
+import { useState } from "react";
+
+import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
+
 interface ExpenseItemProps {
     title: string;
     amount: number;
     date: Date;
 }
 
-function ExpenseItem(props: ExpenseItemProps) {
+function ExpenseItem(props: ExpenseItemProps): JSX.Element {
+
+    const [title, setTitle] = useState(props.title);
+
+    function clickHandler () {
+        setTitle('Updated!');
+    }
 
     return (
-        <div className="expense-item">
-            <div>{props.date.toISOString()}</div>
+        <Card className="expense-item bg-secondary">
+            <ExpenseDate date={props.date} />
             <div className="expense-item__description">
-                <h2>{props.title}</h2>
+                <h2>{title}</h2>
                 <div className="expense-item__price">{props.amount}</div>
             </div>
-        </div>
+            <button onClick={clickHandler}>Update Title</button>
+        </Card>
     );
 }
 
