@@ -4,7 +4,7 @@ import Card from "./Card";
 
 function Expenses (props: { items: { id?: string, title: string, amount: number, date: Date }[] }) {
     return(
-        <Card className="container bg-primary">
+        <Card className="container bg-black text-white my-4 py-3">
             <ExpenseItem
                 title = {props.items[0].title}
                 amount = {props.items[0].amount}

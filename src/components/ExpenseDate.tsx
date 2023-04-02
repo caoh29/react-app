@@ -8,10 +8,12 @@ function ExpenseDate(props: ExpenseDateProps): JSX.Element {
     const year:number = props.date.getFullYear();
 
     return (
-        <div>
-            <div>{month}</div>
-            <div>{day}</div>
-            <div>{year}</div>
+        <div className="col">
+            <div className="btn btn-dark btn-outline-light my-2 px-3">
+                <div className="text-capitalize fw-semibold">{month}</div>
+                <div className="fw-light">{year}</div>
+                <div className="fw-bold fs-5">{day}</div>
+            </div>
         </div>
     );
 }

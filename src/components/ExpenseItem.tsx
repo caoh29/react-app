@@ -18,13 +18,19 @@ function ExpenseItem(props: ExpenseItemProps): JSX.Element {
     }
 
     return (
-        <Card className="expense-item bg-secondary">
-            <ExpenseDate date={props.date} />
-            <div className="expense-item__description">
-                <h2>{title}</h2>
-                <div className="expense-item__price">{props.amount}</div>
+        <Card className="container bg-secondary my-2">
+            <div className="d-flex align-items-center">
+                <ExpenseDate date={props.date} />
+                <div className="col-6">
+                    <h2 className="text-left">{title}</h2>
+                </div>
+                <div className="col">
+                    <h2 className="btn btn-primary btn-outline-light">${props.amount}</h2>
+                </div>
+                <div className="col">
+                    <button onClick={clickHandler}>Update Title</button>
+                </div>
             </div>
-            <button onClick={clickHandler}>Update Title</button>
         </Card>
     );
 }
