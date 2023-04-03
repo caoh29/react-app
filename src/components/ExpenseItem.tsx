@@ -5,7 +5,7 @@ import Card from "./Card";
 
 interface ExpenseItemProps {
     title: string;
-    amount: number;
+    amount: string;
     date: Date;
 }
 
